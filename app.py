@@ -53,7 +53,7 @@ def text_to_speech(text):
 
 # Streamlit app interface
 def main():
-    st.title("Speech to Speech Translation")
+    st.title("Speech-to-Speech Translation")
     st.markdown(models_description)
     uploaded_audio = st.file_uploader("Upload an Audio File (only mp3)", type=["mp3"])
 
