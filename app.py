@@ -6,7 +6,7 @@ from io import BytesIO
 
 # Load the OpenAI API key
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("key")
 client = OpenAI(api_key = OPENAI_API_KEY)
 
 # Function to convert speech to text
