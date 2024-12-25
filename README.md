@@ -5,15 +5,15 @@ This is a Streamlit web application that utilizes OpenAI's models for automatic 
 3. TTS-1: (for text-to-speech conversion)
 # How to setup?
 1. Clone the repository:
-'''
+```
 git clone https://github.com/yourusername/speech-to-speech-translation.git
 cd speech-to-speech-translation
-'''
+```
 2. Create a .env file in the root directory of the project folder. Then add your openai key
-'''
+```
 key=your-openai-api-key
-'''
+```
 4. Run the app:
-'''
+```
 streamlit run app.py
-'''
+```
