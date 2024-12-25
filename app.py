@@ -9,6 +9,17 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("key")
 client = OpenAI(api_key = OPENAI_API_KEY)
 
+# Define the models
+models_description = """
+### Model Descriptions:
+
+- **whisper-1**: A state-of-the-art automatic speech recognition (ASR) model by OpenAI, capable of transcribing audio into text across multiple languages.
+  
+- **gpt-4o-mini**: A smaller variant of OpenAI's GPT-4 model, fine-tuned for tasks such as language translation, summarization, and other text-based processing.
+
+- **tts-1**: A text-to-speech (TTS) model from OpenAI, designed to convert text into natural-sounding speech in various voices and languages.
+"""
+
 # Function to convert speech to text
 def speech_to_text(audio):
     transcription = client.audio.transcriptions.create(
@@ -43,11 +54,11 @@ def text_to_speech(text):
 # Streamlit app interface
 def main():
     st.title("Speech to Speech Translation")
-    
+    st.markdown(models_description)
     uploaded_audio = st.file_uploader("Upload an Audio File (only mp3)", type=["mp3"])
 
-    # User input for desired output language
-    language = st.text_input("Enter the desired language for the output text (e.g., Spanish, French, etc.)")
+    # Request user to put desired language
+    language = st.text_input("Enter the desired language for the output text (e.g., Tagalog, Japanese, etc.)")
     
     if uploaded_audio is not None and language:
         # Step 1: Convert speech to text
