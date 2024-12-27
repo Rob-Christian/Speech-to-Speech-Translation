@@ -55,7 +55,7 @@ def text_to_speech(text):
 def main():
     st.title("Speech-to-Speech Translation")
     st.markdown(models_description)
-    uploaded_audio = st.file_uploader("Upload an Audio File (only mp3)", type=["mp3"])
+    uploaded_audio = st.file_uploader("Upload an Audio File (only mp3). For better results, use a short audio clip (~10 secs maximum)", type=["mp3"])
 
     # Request user to put desired language
     language = st.text_input("Enter the desired language for the output text (e.g., Tagalog, Japanese, etc.)")
